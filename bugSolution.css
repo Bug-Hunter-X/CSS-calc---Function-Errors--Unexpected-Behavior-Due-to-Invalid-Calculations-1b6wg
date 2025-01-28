@@ -1,0 +1,27 @@
+/* bugSolution.css */
+
+/* Correct usage of calc() function */
+.container {
+  width: calc(100% - 20px);
+  /*Subtract 20 pixels from 100% of the parent container's width*/
+}
+
+.element {
+  width: calc(50% - 10px);
+  height: calc(100px + 1em); /* Combine pixels and ems properly */
+}
+
+/* Use Math.max to avoid negative values */
+.element-dynamic {
+  width: calc(max(100px, 100% - 200px));
+  /* width will never be smaller than 100px */
+}
+
+/* Handling dynamic parent dimensions*/
+.responsive-element{
+  width: 100%;
+  max-width: 500px;
+  /* This handles responsiveness and avoids the problems associated with calculating percentages relative to unknown parent dimensions*/
+}
+
+/* Always handle edge cases during page load and resize.  Sometimes waiting to apply sizes until the browser has layout information is beneficial */
